@@ -9,10 +9,18 @@ gulp.task('html', function() {
     console.log("Imagine something useful being done to your HTML here!");
 });
 
+gulp.task('styles', function() {
+    console.log("Imagine Sass or post-css tasks running here");
+});
+
 gulp.task('watch', function() {
 
-    watch('.app/index.html', function() {
+    watch('./app/index.html', function() {
         gulp.start('html');
     });
-    
+
+    watch('./app/assets/styles/*.*', function() {
+        gulp.start('styles');
+    });
+
 });
